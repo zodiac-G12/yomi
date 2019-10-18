@@ -1,0 +1,45 @@
+@media screen and (orientation: portrait) {
+    body{
+        padding: 30vw 5vw 20vw 5vw;
+        font-size: 5vw;
+    }
+}
+@media screen and (orientation: landscape) {
+    body{
+        padding: 5vw;
+        font-size: 2vw;
+    }
+}
+
+
+
+@font-face {
+    font-family: 'MyFont';
+    src: url(./logotypejp_mp_b_1.1.ttf);
+}
+body{
+    background: black;
+    -webkit-text-size-adjust: none;
+    font-family: 'PT Serif', 'MyFont';
+    overflow-x: hidden;
+    width: 90vw;
+}
+.moji{
+    /* word-wrap: normal; */
+    color: white;
+    width: 90vw;
+    /* color: rgba(0,0,0,0); */
+    /* background-image: url('tezcatlipoca-fresco.jpg'); */
+    /* -webkit-background-clip: text; */
+    /* background-clip: text; */
+}
+#\0031, #\0032{
+    text-align: center;
+}
+#\0031{
+    font-size: 120%;
+}
+#\0032{
+    font-size: 110%;
+    margin-bottom: 5vw;
+}
