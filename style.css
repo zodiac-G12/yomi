@@ -23,15 +23,22 @@ body{
     font-family: 'PT Serif', 'MyFont';
     overflow-x: hidden;
     width: 90vw;
+    /* text-align: center; */
+}
+div{
+    color: white;
+}
+div:hover{
+    color: crimson;
 }
 .moji{
     /* word-wrap: normal; */
-    color: white;
+    color: seagreen;
     width: 90vw;
-    /* color: rgba(0,0,0,0); */
-    /* background-image: url('tezcatlipoca-fresco.jpg'); */
-    /* -webkit-background-clip: text; */
-    /* background-clip: text; */
+    color: rgba(0,0,0,0);
+    background-image: url('tezcatlipoca-fresco.jpg');
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 #\0031, #\0032{
     text-align: center;
