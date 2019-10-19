@@ -26,7 +26,7 @@ function link(id){
     let data;
     $(function(){
         $.ajax({
-            url: `http://pubserver2.herokuapp.com/api/v0.1/books/${id}/content?format=html`,
+            url: `https://pubserver2.herokuapp.com/api/v0.1/books/${id}/content?format=html`,
             type: "GET",
             origin: "*",
             success: function(res) {
