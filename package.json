@@ -1,0 +1,60 @@
+{
+  "name": "yomi",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "/yomi/",
+  "engines": {
+    "pnpm": "8.6.x",
+    "node": "20.x"
+  },
+  "scripts": {
+    "start": "vite",
+    "prepare": "husky install",
+    "dev": "vite",
+    "build": "export GITHUB_PAGES=true && vite build",
+    "build:local": "vite build",
+    "serve": "vite preview",
+    "test": "vitest",
+    "testrun": "vitest run",
+    "lint-staged": "lint-staged",
+    "format": "prettier-eslint --write \"**/*.{js,json,md,yml,ts,tsx,jsx,css,scss}\""
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.4.4",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-autofix": "^1.1.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "prettier-eslint-cli": "^7.1.0",
+    "solid-devtools": "^0.27.3",
+    "typescript": "^5.1.3",
+    "vite": "^4.3.9",
+    "vite-plugin-solid": "^2.7.0"
+  },
+  "dependencies": {
+    "@solidjs/router": "^0.8.2",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "eslint": "^8.44.0",
+    "eslint-plugin-solid": "^0.12.1",
+    "husky": "^8.0.3",
+    "i18next": "^23.2.8",
+    "lint-staged": "^13.2.3",
+    "prettier-eslint": "^15.0.1",
+    "rehype-katex": "^6.0.3",
+    "rehype-raw": "^6.1.1",
+    "remark-math": "^5.1.1",
+    "solid-app-router": "^0.4.2",
+    "solid-highlight": "^0.1.12",
+    "solid-js": "^1.7.7",
+    "solid-markdown": "^1.2.2",
+    "solid-styled-components": "^0.28.5"
+  },
+  "lint-staged": {
+    "*.{js,json,md,yml,ts,tsx,jsx,css,scss}": "pnpm format"
+  },
+  "moduleNameMapper": {
+    "^@/(.*)$": "<rootDir>/../src/$1"
+  }
+}
