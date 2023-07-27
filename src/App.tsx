@@ -1,6 +1,6 @@
 import {lazy, createEffect, createSignal} from 'solid-js';
 import type {Component} from 'solid-js';
-import {Router, Routes, Route} from '@solidjs/router';
+import {Router, Routes, Route, hashIntegration} from '@solidjs/router';
 
 const spMaxWidth = 450;
 const homeFileName = 'home';
@@ -22,7 +22,7 @@ const App: Component = () => {
   });
 
   return (
-    <Router>
+    <Router source={hashIntegration()}>
       <Routes>
         <Route path="/" element={<Home isSP={isSP} />} />
         <Route
