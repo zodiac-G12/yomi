@@ -78,6 +78,8 @@ const NovelDetail: Component<{
   const [sentence, setSentence] = createSignal(data()?.toString());
 
   const [isStop, setIsStop] = createSignal(false);
+  const [scrollHeight, setScrollHeight] = createSignal(0);
+  const [scrollTop, setScrollTop] = createSignal(0);
 
   const handleClick = () => {
     setIsStop(!isStop());
@@ -95,7 +97,15 @@ const NovelDetail: Component<{
       onCleanup(() => clearInterval(timer));
     } else {
       const timer = setInterval(
-          () => (setCount(count() + 1), setSentence(dataValue.slice(0, count()))),
+          () => {
+            (setCount(count() + 1), setSentence(dataValue.slice(0, count())));
+            if (document.scrollingElement) {
+              console.log(scrollTop(), scrollHeight());
+              setScrollHeight(document.scrollingElement.scrollHeight);
+              setScrollTop(scrollHeight());
+              document.scrollingElement.scrollTop = scrollTop();
+            }
+          },
           100
       );
       onCleanup(() => clearInterval(timer));
@@ -104,6 +114,7 @@ const NovelDetail: Component<{
 
   return (
     <div class={NovelDetailContainer} onClick={handleClick}>
+      <div class={Fantom}></div>
       <div class={NovelTitle}>{novel.novelTitle}</div>
       <div class={NovelAuthor}>{novel.author}</div>
       <div class={NovelSentence}>{sentence()}</div>
@@ -118,13 +129,18 @@ const NovelDetail: Component<{
 
 export default NovelDetail;
 
+const Fantom = css({
+  position: "fixed",
+  height: 'calc(100vh - 20px)',
+  width: 'calc(100vw - 20px)',
+  background: "rgba(0,0,0,0)",
+  zIndex: 1,
+});
+
 const NovelDetailContainer = css({
   background: 'black',
   padding: '10px',
-  position: 'fixed',
-  height: 'calc(100vh - 20px)',
-  width: 'calc(100vw - 20px)',
-  zIndex: 1,
+  zIndex: 2,
 });
 
 const NovelTitle = css({
@@ -152,4 +168,5 @@ const NovelSentence = css({
   fontFamily: 'MyFont',
   whiteSpace: 'pre-line',
   zIndex: 2,
+  marginBottom: "5vw",
 });
