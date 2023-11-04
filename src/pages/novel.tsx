@@ -11,7 +11,6 @@ import type {Component} from 'solid-js';
 import {Router, Routes, Route, Link, useParams} from '@solidjs/router';
 import {authors, Author, Novel} from '../authors';
 import {css} from 'solid-styled-components';
-import SolidMarkdown from 'solid-markdown';
 
 const getNovel = async (props: { authorID: string; novelID: string }) => {
   const {authorID, novelID} = props;
@@ -100,7 +99,6 @@ const NovelDetail: Component<{
           () => {
             (setCount(count() + 1), setSentence(dataValue.slice(0, count())));
             if (document.scrollingElement) {
-              console.log(scrollTop(), scrollHeight());
               setScrollHeight(document.scrollingElement.scrollHeight);
               setScrollTop(scrollHeight());
               document.scrollingElement.scrollTop = scrollTop();
@@ -118,11 +116,6 @@ const NovelDetail: Component<{
       <div class={NovelTitle}>{novel.novelTitle}</div>
       <div class={NovelAuthor}>{novel.author}</div>
       <div class={NovelSentence}>{sentence()}</div>
-      {/* <SolidMarkdown
-        class={NovelSentence}
-        children={sentence()}
-      />
-      */}
     </div>
   );
 };
