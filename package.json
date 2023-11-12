@@ -4,8 +4,8 @@
   "description": "",
   "homepage": "/yomi/",
   "engines": {
-    "pnpm": "8.6.x",
-    "node": "20.x"
+    "pnpm": "8.x",
+    "node": "21.x"
   },
   "scripts": {
     "start": "vite",
